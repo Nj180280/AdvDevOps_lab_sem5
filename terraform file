@@ -1,0 +1,19 @@
+terraform { 
+    required_providers {
+        aws = {
+            source = "hashicorp/aws" 
+            version = "~> 4.0"
+        }
+    }
+}
+
+provider "aws" {
+    region = "ap-south-1"
+    access_key="AKIAZZJD4A7Z73CCUOW5"
+    secret_key="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"
+}
+
+resource "aws_instance" "public_instance" {
+    ami           = "ami-0287a05f0ef0e9d9a" 
+    instance_type = "t2.micro"
+}
